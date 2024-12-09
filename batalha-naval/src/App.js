@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 import Board from './components/Boards';
 import './css/batalha_naval.css';
 
-const socket = io('web-production-4ad0.up.railway.app', {
+const socket = io('web-production-a4de.up.railway.app', {
     transports: ['websocket']  // Força o uso de WebSocket
 });
 
