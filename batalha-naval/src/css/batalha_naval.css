@@ -1,0 +1,222 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    position: relative; /* Necessário para posicionar o fundo */
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden; /* Evita que o blur ultrapasse o container */
+}
+
+.app-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assents/fundo_2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(4px); /* Ajuste o valor para o nível de desfoque desejado */
+    z-index: -1; /* Coloca o fundo atrás do conteúdo */
+}
+
+.start-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 250px; /* Largura do container */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo com opacidade */
+    border-radius: 10px;
+    border: 2px solid #1c6ea4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para destaque */
+    margin-bottom: 20px;
+    margin-top: 20vh;
+}
+
+.start-game-title {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+
+
+.start-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #129bf7d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+    background-color: #145a8d; /* Cor mais escura ao passar o mouse */
+}
+
+.ship-placement-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo transparente */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #1c6ea4;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin-right: 75vh;
+    margin-top: -13vh;
+}
+
+.ship-placement-form h3 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.ship-placement-form form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px; /* Espaço entre os itens */
+    max-width: 420px; /* Limita a largura */
+    
+}
+
+.ship-placement-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+    align-items: flex-start;
+    width: 45%; /* Controla a largura de cada label */
+    box-sizing: border-box;
+}
+
+.ship-placement-form label select,
+.ship-placement-form label input {
+    margin-top: 5px;
+    padding: 8px;
+    font-size: 0.9rem;
+    border: 2px solid #1c6ea4;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    width: 100%; /* Ocupa toda a largura do label */
+    outline: none;
+    transition: border-color 0.3s ease;
+    
+}
+
+.ship-placement-form label select:focus,
+.ship-placement-form label input:focus {
+    border-color: #129bf7;
+}
+
+.ship-placement-form button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1rem;
+    background-color: #1c6ea4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.ship-placement-form button:hover {
+    background-color: #145a8d;
+    transform: scale(1.05);
+}
+
+
+
+.leave-button {
+    padding: 10px 20px;
+    margin-left: 75vh;
+    font-size: 1rem;
+    background-color: #1c6ea4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-start; 
+    margin-top: 20px;
+}
+
+.board-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30vh;
+    margin-top: 20px;
+}
+
+.board-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.board-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+
+/* Estilização para a área de mensagens, parecendo uma caixa de texto */
+.message-container {
+    
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f4f4f4c7; /* Fundo claro, como uma caixa de texto */
+    border: 2px solid #bbb; /* Borda semelhante a uma caixa de texto */
+    border-radius: 8px; /* Bordas arredondadas */
+    max-width: 400px;
+    width: 100%;
+    margin-left: 75vh;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    white-space: pre-wrap; /* Mantém a formatação de quebras de linha */
+    word-wrap: break-word; /* Quebra palavras longas, se necessário */
+
+}
+
+/* Rótulo 'Mensagem:' */
+.message-label {
+    font-weight: bold;
+    margin-right: 10px; /* Espaçamento entre o rótulo e a mensagem */
+    color: #333;
+}
+
+/* Estilo para o conteúdo da mensagem */
+.message-content {
+    color: #333;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+
+.player-info{
+    text-align: left;
+    position: absolute;
+    margin-right: 165vh;
+    font-size: 25px;
+}

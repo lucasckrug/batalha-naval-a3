@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocketIO Test</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <h1>SocketIO Test</h1>
+    <script>
+        const socket = io('http://127.0.0.1:5000'); // Altere a URL se necessário
+
+        socket.on('connect', () => {
+            console.log('Conectado ao servidor SocketIO!');
+        });
+
+        socket.on('disconnect', () => {
+            console.log('Desconectado do servidor SocketIO');
+        });
+
+        socket.on('move_result', (result) => {
+            console.log(result);
+        });
+    </script>
+</body>
+</html>
